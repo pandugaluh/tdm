@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "78c27f0a-8a37-41f0-b6aa-073ea3bc2617",
+		"name": "Twitter OAuth 1.0a flow test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21695392"
+	},
+	"item": [
+		{
+			"name": "Step 1 - get oauth_token",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_key_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth/request_token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"request_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 2 - go to browser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth/authorize?oauth_token=from-Step-1&oauth_token_secret=from-Step-1&oauth_callback_confirmed=true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "oauth_token",
+							"value": "from-Step-1",
+							"description": "Temporary oauth_token from Step 1 result, use in URL"
+						},
+						{
+							"key": "oauth_token_secret",
+							"value": "from-Step-1",
+							"description": "Temporary oauth_token_secret from Step 1 result, use in URL"
+						},
+						{
+							"key": "oauth_callback_confirmed",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 3 - get access_token",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_key_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth/access_token?oauth_token=frome-Step2&oauth_verifier=frome-Step2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"access_token"
+					],
+					"query": [
+						{
+							"key": "oauth_token",
+							"value": "frome-Step2",
+							"description": "Temporary oauth_token from Step 2 redirect response"
+						},
+						{
+							"key": "oauth_verifier",
+							"value": "frome-Step2",
+							"description": "Temporary oauth_verifier from Step 2 redirect response"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "consumer_key",
+			"value": "Your consumer key",
+			"type": "string"
+		},
+		{
+			"key": "consumer_key_secret",
+			"value": "Your consumer secret",
+			"type": "string"
+		}
+	]
+}

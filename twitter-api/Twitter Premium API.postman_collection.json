@@ -1,0 +1,900 @@
+{
+	"info": {
+		"_postman_id": "e852fa3b-3c9e-48a0-84b6-173b3cfc67b4",
+		"name": "Twitter Premium API",
+		"description": "This is a Postman Collection for the Twitter Premium APIs.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21695392"
+	},
+	"item": [
+		{
+			"name": "Search:30day",
+			"item": [
+				{
+					"name": "Search:30day (sandbox)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"maxResults\": 100,\n\t\"query\": \"#fridayfeeling has:images\"\n}"
+						},
+						"url": {
+							"raw": "https://api.twitter.com/1.1/tweets/search/30day/{{environment}}.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"tweets",
+								"search",
+								"30day",
+								"{{environment}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search:30day (paid tiers)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"maxResults\": 500,\n\t\"query\": \"#fridayfeeling has:images -is:retweet\"\n}"
+						},
+						"url": {
+							"raw": "https://api.twitter.com/1.1/tweets/search/30day/{{environment}}.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"tweets",
+								"search",
+								"30day",
+								"{{environment}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search:30day counts (paid tiers)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": \"#fridayfeeling has:images -is:retweet\",\n    \"bucket\": \"day\"\n}"
+						},
+						"url": {
+							"raw": "https://api.twitter.com/1.1/tweets/search/30day/{{environment}}/counts.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"tweets",
+								"search",
+								"30day",
+								"{{environment}}",
+								"counts.json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Search Tweets created in the last 30 days with a query rule."
+		},
+		{
+			"name": "Search:FullArchive",
+			"item": [
+				{
+					"name": "Search:FullArchive (sandbox)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"maxResults\": 100,\n\t\"query\": \"#fridayfeeling has:images\"\n}"
+						},
+						"url": {
+							"raw": "https://api.twitter.com/1.1/tweets/search/fullarchive/{{environment}}.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"tweets",
+								"search",
+								"fullarchive",
+								"{{environment}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search:FullArchive (paid tiers)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"maxResults\": 500,\n\t\"query\": \"#fridayfeeling has:images -is:retweet\"\n}"
+						},
+						"url": {
+							"raw": "https://api.twitter.com/1.1/tweets/search/fullarchive/{{environment}}.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"tweets",
+								"search",
+								"fullarchive",
+								"{{environment}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search:FullArchive counts (paid tiers)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": \"#fridayfeeling has:images -is:retweet\",\n    \"bucket\": \"day\"\n}"
+						},
+						"url": {
+							"raw": "https://api.twitter.com/1.1/tweets/search/fullarchive/{{environment}}/counts.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"tweets",
+								"search",
+								"fullarchive",
+								"{{environment}}",
+								"counts.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AccountActivity",
+			"item": [
+				{
+					"name": "List Webhook URLs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/webhooks.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"webhooks.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Webhook URL",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenSecret",
+									"value": "{{app_owner_access_token_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{app_owner_access_token}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_key_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/{{environment}}/webhooks.json?url=http://127.0.0.1:4040",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"{{environment}}",
+								"webhooks.json"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://127.0.0.1:4040",
+									"description": "Example: https://your_domain.com/webhook/twitter"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check or reset webhook URL",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{app_owner_access_token_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{app_owner_access_token}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_key_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/{{environment}}/webhooks/:webhook_id?oauth_consumer_key=your premium App consumer key&oauth_nonce=UqnkudcQe1t&oauth_signature=DOlAihn1wQiWZVrvuGxK0+Dc+Yg=&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1625004314&oauth_token=your user access token",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"{{environment}}",
+								"webhooks",
+								":webhook_id"
+							],
+							"query": [
+								{
+									"key": "oauth_consumer_key",
+									"value": "your premium App consumer key"
+								},
+								{
+									"key": "oauth_nonce",
+									"value": "UqnkudcQe1t"
+								},
+								{
+									"key": "oauth_signature",
+									"value": "DOlAihn1wQiWZVrvuGxK0+Dc+Yg="
+								},
+								{
+									"key": "oauth_signature_method",
+									"value": "HMAC-SHA1"
+								},
+								{
+									"key": "oauth_timestamp",
+									"value": "1625004314"
+								},
+								{
+									"key": "oauth_token",
+									"value": "your user access token"
+								}
+							],
+							"variable": [
+								{
+									"key": "webhook_id",
+									"value": "",
+									"description": "Webhook identifier of the webhook you would like to run a CRC for."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete webhook URL",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{app_owner_access_token_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{app_owner_access_token}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_key_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/{{environment}}/webhooks/:webhook_id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"{{environment}}",
+								"webhooks",
+								":webhook_id"
+							],
+							"variable": [
+								{
+									"key": "webhook_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List active subscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/{{environment}}/subscriptions/list.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"{{environment}}",
+								"subscriptions",
+								"list.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count active subscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/subscriptions/count.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"subscriptions",
+								"count.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create subscription",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenSecret",
+									"value": "{{access_token_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_key_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/{{environment}}/subscriptions.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"{{environment}}",
+								"subscriptions.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check subscription",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{access_token_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_key_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/{{environment}}/subscriptions.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"{{environment}}",
+								"subscriptions.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Bearer Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.twitter.com/1.1/account_activity/all/{{environment}}/subscriptions/:user_id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"1.1",
+								"account_activity",
+								"all",
+								"{{environment}}",
+								"subscriptions",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "",
+									"description": "User ID of the subscription you would like removed"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89AA729A-0B45-4DBA-AE51-F423782F2D5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TweetScrapConsole", "src\TweetScrapConsole\TweetScrapConsole.csproj", "{09623822-9086-43C2-A4D5-2E97AD4A70B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09623822-9086-43C2-A4D5-2E97AD4A70B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09623822-9086-43C2-A4D5-2E97AD4A70B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09623822-9086-43C2-A4D5-2E97AD4A70B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09623822-9086-43C2-A4D5-2E97AD4A70B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09623822-9086-43C2-A4D5-2E97AD4A70B7} = {89AA729A-0B45-4DBA-AE51-F423782F2D5C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCD65E36-85DA-4840-A925-9C77BBC3D937}
+	EndGlobalSection
+EndGlobal
